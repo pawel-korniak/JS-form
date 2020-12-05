@@ -1,0 +1,6 @@
+to niby ma być ten formularz o którym mówiłeś,
+w huj specyfikacji do wyboru, rózne warianty i przedziały wartości,
+wszystko w zmiennych, tylko wprowadzić obiekty do porównania(maszyny czy coś),
+zdefiniować kryteria porównań i jazda,
+
+p.s javascript ssie Javie, wyrzucić to do backendu i będzie łatwiej obrobić
