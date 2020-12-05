@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+
+        class Range {
+        constructor(min,max){ 
+            this.min = min;
+            this.max = max;;
+            }
+        show() {
+            var text = "from ";
+            return text + this.min + " to " + this.max;
+        }
+    
+        }
+        class Checkbox{
+        constructor(array){
+            this.tab = Array.of(array);
+        }
+        show(){
+            
+            var text = " Checked options : "
+            for(var option of this.tab){
+               text = text + option;
+             }
+            return text;
+        }
+
+        }
+
+    
+ 
+        function wypisz(){
+            var a1 = document.getElementById("input1").value;
+            var a2 = document.getElementById("input2").value;
+            var a3 = document.getElementById("input3").value;
+            var a4 = document.getElementById("input4").value;
+            var range1 = new Range(a1,a2);
+            var range2 = new Range(a3,a4);
+            var result = "Range 1 : "+range1.show() + ".<br>Range 2 : " + range2.show()+".<br>";
+            var a5 = document.getElementById("input5").value;
+            var a6 = document.getElementById("input6").value;
+            result = result + "Dimension x : " + a5 + ".<br>Dimension y : " + a6;
+            var a7 = document.getElementById("input7").value;
+            var a8 = document.getElementById("input8").value;
+            result = result + ".<br>Max value : " + a7 + ".<br>Min value : " + a8;
+
+            var tab1 = new Array();
+            for(i=1;i<=6;i++){
+                var option = "option"+i;
+                var checkBox = document.getElementById(option);
+                if(checkBox.checked == true){
+                    var pushed = tab1.push(option);
+                }
+            }
+            var check = new Checkbox(tab1);
+            result = result + "<br>" + check.show();
+            
+            result = result + ".<br>Selected option 1 : " + document.getElementById("option11").value;
+            result = result + ".<br>Selected option 2 : " + document.getElementById("option22").value;
+        
+
+            
+            document.getElementById("return").innerHTML=result;
+
+        }
+        
+    </script>
+</head>
+<body>
+        <h1>INPUT</h1><br>
+        range1 from<input type="text" id="input1">to
+        <input type="text" id="input2"><br>
+        range2 from<input type="text" id="input3">to
+        <input type="text" id="input4"><br><br>
+        
+        dimension x<input type="text" id="input5"><br>
+        dimension y<input type="text" id="input6"><br><br>
+
+        max value<input type="text" id="input7"><br>
+        min value<input type="text" id="input8"><br><br>
+
+        <input type="checkbox" id="option1" name="option1" value="option1">
+        <label for="vehicle1"> I need option1</label>
+        <input type="checkbox" id="option2" name="option2" value="option2">
+        <label for="vehicle2"> I need option2</label><br>
+        <input type="checkbox" id="option3" name="option3" value="option3">
+        <label for="vehicle3"> I need option3</label>
+        <input type="checkbox" id="option4" name="option4" value="option4">
+        <label for="vehicle4"> I need option4</label><br>
+        <input type="checkbox" id="option5" name="option5" value="option5">
+        <label for="vehicle5"> I need option5</label>
+        <input type="checkbox" id="option6" name="option6" value="option6">
+        <label for="vehicle6"> I need option6</label><br><br>
+
+        select option1<select id="option11">
+            <option>Opcja 1</option>
+            <option>Opcja 2</option>
+            <option>Opcja 3</option>
+          </select><br>
+          select option2<select id="option22">
+            <option>Opcja 1</option>
+            <option>Opcja 2</option>
+            <option>Opcja 3</option>
+            <option>Opcja 4</option>
+            <option>Opcja 5</option>
+            <option>Opcja 6</option>
+          </select><br><br>
+
+
+        <input type="submit" id="button1" name="submit" onclick="wypisz()"></input><br>
+        <h1>OUTPUT</h1><br>
+        <div id="return">choose wisely</div><br>
+
+    
+</body>
+</html>
